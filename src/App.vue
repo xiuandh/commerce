@@ -1,16 +1,21 @@
 <template>
   <div id="app">
     <app-header/>
+    <app-test/>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
 import AppHeader from './components/common/header'
+import AppTest from './components/page/goodslist.vue'
+
 export default {
   name: 'App',
   components: {
-      AppHeader
+      AppHeader,
+      AppTest
+ 
   }
 }
 </script>

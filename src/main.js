@@ -8,9 +8,9 @@ import router from './router'
 import './sass/main.scss' 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { faUser,faSearch } from '@fortawesome/free-solid-svg-icons'
-library.add(faUser,faSearch)
-
+import { faUser,faSearch, faWindowMinimize,faInfo } from '@fortawesome/free-solid-svg-icons'
+library.add(faUser,faSearch,faWindowMinimize,faInfo)
+ 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 import Mint from 'mint-ui'
