@@ -75,6 +75,20 @@
         methods:{
             goto(id){
                 this.$router.push({name:'specialSale',params:{id}});
+            },
+            getlists(){
+                this.$http.get('http://10.3.137.17:6000/mizhe/newup').then(
+                    res=>{
+                        console.log(res)
+                    }
+
+                    )
+
+
+        },
+
+        created(){
+            this.getlists();
             }
         }
     }
@@ -106,18 +120,18 @@
 }
  .goodslist{
      display:flex;
-     padding:2%;
+     /*padding:2%;*/
      flex-wrap:wrap;
 }
  .goodslist li{
-     width: 48%;
+     width: 49%;
 }
  .goodslist li:nth-child(2n-1){
-     margin-right:3%;
+     margin-right:2%;
 }
  .goodslist img{
      width: 100%;
-     height: 9.0625rem;
+    
 }
  .goodslist .title{
      padding:0 0.125rem;

@@ -28,6 +28,13 @@ Vue.prototype.$loading = Indicator
 
 Vue.config.productionTip = false
 
+// 引入轮播图
+import { Swipe, SwipeItem } from 'mint-ui';
+
+Vue.component(Swipe.name, Swipe);
+Vue.component(SwipeItem.name, SwipeItem);
+
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
