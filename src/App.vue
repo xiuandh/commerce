@@ -1,17 +1,14 @@
 <template>
   <div id="app">
-    <app-header/>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
 const address = 'http://10.3.137.17:7070'
-import AppHeader from './components/page/search/classify'
 export default {
   name: 'App',
   components: {
-      AppHeader
   }
 }
 </script>
