@@ -2,3 +2,8 @@
 @for $i from 0 to 6{
     .p#{$i}{padding:$i*5px};
 }
+ul{
+    margin:0;padding:0;
+    li{list-style: none;}
+}
+a{text-decoration: none;}

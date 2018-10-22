@@ -1,28 +1,14 @@
 <template>
-    <div class="header">
-        <mt-header fixed :title="title">
-            <router-link to="/" slot="left" solt="test1">
-                <font-awesome-icon icon="user" />
-            </router-link>
-            <font-awesome-icon icon="search" slot="right" />
-        </mt-header>
-        <!-- <mt-navbar  fixed style="marginTop:40px;">
-            <mt-tab-item v-for="bar in bars" :key="bar.id" :id="bar.id" @click.native="goto(bar.to)">{{bar.title}}</mt-tab-item>
-        </mt-navbar> -->
-        <ul class="top-ul">
-            <li v-for="bar in bars" :key="bar.id" ><router-link :to='bar.to'><span :class='{active:bar.id==currentIdx}' ref="html" @click="goto(bar)">{{bar.title}}</span></router-link></li>
-        </ul>
-    </div>
+    <ul class="top-ul">
+        <li v-for="bar in bars" :key="bar.id" ><router-link :to='bar.to'><span :class='{active:bar.id==currentIdx}' ref="html" @click="goto(bar)">{{bar.title}}</span></router-link></li>
+    </ul>
 </template>
-
 <script>
-import Vue from 'vue'
-
 export default {
     data(){
         return {
-            title:'米折',
             currentIdx:1,
+            title:'上新',
             bars:[
                 {title:'上新',to:'/new',id:1},
                 {title:'女装',to:'/womenclothes',id:2},
@@ -41,23 +27,13 @@ export default {
                 this.title = '米折'
             }else{
                 this.title= bar.title
-            }
-            
+                }
         }
+        
     }
 }
 </script>
-
 <style lang="scss" scoped>
-.header{
-    background-color: #eee;
-    height:100%;
-    .mint-header{
-        background-color:#f9f9f9;
-        color:#333;
-        svg{color:#333;}
-    }
-    // header.vue
     .top-ul{
         font-size:.75rem;
         display:flex;
@@ -82,8 +58,5 @@ export default {
             }
         }
     }
-}
-    
 </style>
-
 

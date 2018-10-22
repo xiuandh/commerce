@@ -6,7 +6,8 @@
 </template>
 
 <script>
-import AppHeader from './components/common/header'
+const address = 'http://10.3.137.17:7070'
+import AppHeader from './components/page/search/classify'
 export default {
   name: 'App',
   components: {
