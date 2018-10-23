@@ -5,10 +5,11 @@
 </template>
 
 <script>
-const address = 'http://10.3.137.17:7070'
+
 export default {
   name: 'App',
   components: {
+
   }
 }
 </script>
