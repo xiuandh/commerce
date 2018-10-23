@@ -1,6 +1,6 @@
 <template>
     <ul class="top-ul">
-        <li v-for="bar in bars" :key="bar.id" ><router-link :to='bar.to'><span :class='{active:bar.id==currentIdx}' ref="html" @click="goto(bar)">{{bar.title}}</span></router-link></li>
+        <li v-for="bar in bars" :key="bar.id" ><router-link tag="span" :to='bar.to'><span :class='{active:bar.id==currentIdx}' ref="html" @click="goto(bar)">{{bar.title}}</span></router-link></li>
     </ul>
 </template>
 <script>
@@ -34,29 +34,30 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-    .top-ul{
-        font-size:.75rem;
-        display:flex;
-        justify-content: space-around;
-        position:relative;
-        top:2.5rem;
-        border-top:1px solid #ddd;
-        border-bottom:1px solid #ddd;
-        flex:1;
-        li{
-            display:flex;
-            align-items: center;
-            height:1.875rem;
-            span{
-                color:#333;
-                padding-bottom:.300rem;
-                border-bottom:1px solid #fff;
-            }
-            .active{
-                color:#ff3c00;
-                border-bottom:1px solid #ff3c00;
-            }
+  .top-ul{
+    background: #fff;;
+    width: 100%;
+    font-size:1rem;
+    display:flex;
+    justify-content: space-around;
+    position:fixed;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    top:3.125rem;
+    border-bottom:1px solid #ddd;
+    flex:1;
+    z-index: 100;
+    li{
+        span{
+            color:#333;
+            padding-bottom:.300rem;
+            border-bottom:1px solid #fff;
         }
+        .active{
+            color:#ff3c00;
+            border-bottom:1px solid #ff3c00;
+        }
+    }
     }
 </style>
 

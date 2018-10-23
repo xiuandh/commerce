@@ -1,5 +1,6 @@
 <template>
     <div class="personal">
+        <myheader></myheader>
         <div class="background">
             <button>立即登录</button>
             <button>新人注册</button>
@@ -40,6 +41,7 @@
 </template>
 
 <script>
+import myheader from '@/components/common/header'
 export default {
     data(){
         return {
@@ -62,6 +64,9 @@ export default {
                 {id:'contact',icon:'headset',title:'联系客服'},
             ]
         }
+    },
+    components:{
+        myheader
     },
     created(){
         this.$http.get('http://10.3.137.16:7070/mizhe/newup')

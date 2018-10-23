@@ -5,7 +5,6 @@
 </template>
 
 <script>
-
 export default {
   name: 'App',
   components: {
@@ -23,5 +22,6 @@ body{margin:0}
   text-align: center;
   color: #2c3e50;
   font-size:16px;
+  background: #eee;
 }
 </style>

@@ -1,23 +1,24 @@
 <template>
     <div class="header">
         <mt-header fixed :title="title">
-            <router-link to="/" slot="left" solt="test1">
+            <router-link to="/personal" slot="left" solt="test1">
                 <font-awesome-icon icon="user" />
             </router-link>
             <font-awesome-icon icon="search" slot="right" />
         </mt-header>
+        <mynav></mynav>
         <!-- <mt-navbar  fixed style="marginTop:40px;">
             <mt-tab-item v-for="bar in bars" :key="bar.id" :id="bar.id" @click.native="goto(bar.to)">{{bar.title}}</mt-tab-item>
         </mt-navbar> -->
-        <ul class="top-ul">
-            <li v-for="bar in bars" :key="bar.id" ><router-link :to='bar.to'><span :class='{active:bar.id==currentIdx}' ref="html" @click="goto(bar)">{{bar.title}}</span></router-link></li>
-        </ul>
+        <!-- <ul class="top-ul">
+            <li v-for="bar in bars" :key="bar.id" ><router-link tag="span" :to='bar.to'><span :class='{active:bar.id==currentIdx}' ref="html" @click="goto(bar)">{{bar.title}}</span></router-link></li>
+        </ul> -->
     </div>
 </template>
 
 <script>
 import Vue from 'vue'
-
+import mynav from '@/components/common/nav.vue'
 export default {
     data(){
         return {
@@ -33,6 +34,9 @@ export default {
                 {title:'母婴',to:'/momson',id:7},
             ]
         }
+    },
+    components:{
+        mynav
     },
     methods:{
         goto(bar){
@@ -53,35 +57,12 @@ export default {
     background-color: #eee;
     height:100%;
     .mint-header{
+        height: 3.125rem;
         background-color:#f9f9f9;
         color:#333;
         svg{color:#333;}
     }
-    // header.vue
-    .top-ul{
-        font-size:.75rem;
-        display:flex;
-        justify-content: space-around;
-        position:relative;
-        top:2.5rem;
-        border-top:1px solid #ddd;
-        border-bottom:1px solid #ddd;
-        flex:1;
-        li{
-            display:flex;
-            align-items: center;
-            height:1.875rem;
-            span{
-                color:#333;
-                padding-bottom:.300rem;
-                border-bottom:1px solid #fff;
-            }
-            .active{
-                color:#ff3c00;
-                border-bottom:1px solid #ff3c00;
-            }
-        }
-    }
+    
 }
     
 </style>
