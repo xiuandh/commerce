@@ -64,7 +64,7 @@ export default {
         }
     },
     created(){
-        this.$http.get('http://10.3.137.17:7070/mizhe/newup')
+        this.$http.get('http://10.3.137.16:7070/mizhe/newup')
         .then(res =>{
             console.log(res)
         })

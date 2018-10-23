@@ -4,15 +4,14 @@ import Vue from 'vue'
 import App from './App'// 根组件
 import router from './router'
 
-//fontawesome图标库
+//fontawesome图标
 import './sass/main.scss' 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
-import { faUser,faSearch,faArrowLeft,faHome,faHandsHelping,faHourglass,faShoppingCart,faEdit,faSmile,faFolder,faWallet,faMapMarkerAlt,faHeart,faHeadset } from '@fortawesome/free-solid-svg-icons'
-library.add(faUser,faSearch,faArrowLeft,faHome,faHandsHelping,faHourglass,faShoppingCart,faEdit,faSmile,faFolder,faWallet,faMapMarkerAlt,faHeart,faHeadset)
-
-
+import { faUser,faSearch,faArrowLeft,faHome,faHandsHelping,faHourglass,faShoppingCart,faEdit,faSmile,faFolder,faWallet,faMapMarkerAlt,faHeart,faHeadset,faWindowMinimize,faInfo } from '@fortawesome/free-solid-svg-icons'
+library.add(faUser,faSearch,faArrowLeft,faHome,faHandsHelping,faHourglass,faShoppingCart,faEdit,faSmile,faFolder,faWallet,faMapMarkerAlt,faHeart,faHeadset,faWindowMinimize,faInfo)
+ 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 import Mint from 'mint-ui'
@@ -29,11 +28,6 @@ import { Indicator } from 'mint-ui'
 Vue.prototype.$loading = Indicator
 
 Vue.config.productionTip = false
-
-
-
-
-
 
 /* eslint-disable no-new */
 new Vue({
