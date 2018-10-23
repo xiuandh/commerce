@@ -5,10 +5,10 @@
 </template>
 
 <script>
-const address = 'http://10.3.137.17:7070'
 export default {
   name: 'App',
   components: {
+
   }
 }
 </script>
@@ -22,5 +22,6 @@ body{margin:0}
   text-align: center;
   color: #2c3e50;
   font-size:16px;
+  background: #eee;
 }
 </style>

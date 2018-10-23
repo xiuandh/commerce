@@ -4,7 +4,7 @@ import Vue from 'vue'
 import App from './App'// 根组件
 import router from './router'
 
-//fontawesome图标库
+//fontawesome图标
 import './sass/main.scss' 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
@@ -27,7 +27,6 @@ import { Indicator } from 'mint-ui'
 Vue.prototype.$loading = Indicator
 
 Vue.config.productionTip = false
-
 
 /* eslint-disable no-new */
 new Vue({
