@@ -1,6 +1,6 @@
 <template>
     <div>
-        <p class="shangxin"><font-awesome-icon icon="info" class="icon"/><b>每日9点上新</b></p>
+        <p class="shangxin"><font-awesome-icon icon="home" class="icon"/><b>每日9点上新</b></p>
         <ul class="special">
             <li v-for="tab in tabs" :key="tab.id">
                 <img :src="tab.url" />

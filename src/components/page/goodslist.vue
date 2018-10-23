@@ -1,7 +1,7 @@
 <template>
     <div>
         <p class="p1">
-            <span class="left"><font-awesome-icon icon="info" class="icon"/>热卖品牌</span>
+            <span class="left"><font-awesome-icon icon="home" class="icon"/>热卖品牌</span>
             <span class="right" @click="goto(id)">更多品牌 &gt;</span>
         </p>
         <ul class="goodslist">
@@ -19,8 +19,6 @@
 </template>
 
 <script>
-    import Vue from 'vue';
-    
 
     export default {
         data(){
