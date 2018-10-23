@@ -8,15 +8,9 @@ import router from './router'
 import './sass/main.scss' 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-<<<<<<< HEAD
-import { faUser,faSearch,faArrowLeft,faHome,faHandsHelping,faHourglass,faShoppingCart,faEdit,faSmile,faFolder,faWallet,faMapMarkerAlt,faHeart,faHeadset } from '@fortawesome/free-solid-svg-icons'
-library.add(faUser,faSearch,faArrowLeft,faHome,faHandsHelping,faHourglass,faShoppingCart,faEdit,faSmile,faFolder,faWallet,faMapMarkerAlt,faHeart,faHeadset)
-
-=======
-import { faUser,faSearch, faWindowMinimize,faInfo } from '@fortawesome/free-solid-svg-icons'
-library.add(faUser,faSearch,faWindowMinimize,faInfo)
+import { faUser,faSearch,faArrowLeft,faHome,faHandsHelping,faHourglass,faShoppingCart,faEdit,faSmile,faFolder,faWallet,faMapMarkerAlt,faHeart,faHeadset,faWindowMinimize,faInfo } from '@fortawesome/free-solid-svg-icons'
+library.add(faUser,faSearch,faArrowLeft,faHome,faHandsHelping,faHourglass,faShoppingCart,faEdit,faSmile,faFolder,faWallet,faMapMarkerAlt,faHeart,faHeadset,faWindowMinimize,faInfo)
  
->>>>>>> ee6c95bd31664e9ccc4779a5f793c11f4d94527e
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 import Mint from 'mint-ui'
@@ -34,15 +28,6 @@ Vue.prototype.$loading = Indicator
 
 Vue.config.productionTip = false
 
-<<<<<<< HEAD
-=======
-// 引入轮播图
-import { Swipe, SwipeItem } from 'mint-ui';
-
-Vue.component(Swipe.name, Swipe);
-Vue.component(SwipeItem.name, SwipeItem);
-
->>>>>>> ee6c95bd31664e9ccc4779a5f793c11f4d94527e
 
 /* eslint-disable no-new */
 new Vue({
