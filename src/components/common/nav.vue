@@ -1,14 +1,14 @@
 <template>
     <ul class="top-ul">
-        <li v-for="bar in bars" :key="bar.id" ><span :class='{active:bar.id==currentIdx}' ref="html" @click="goto(bar)">{{bar.title}}</span></li>
+        <li v-for="(bar,index) in bars" :key="bar.id" ><span :class='{active:index==currentIdx}' @click="gonav(index);gobar(bar)">{{bar.title}}</span></li>
     </ul>
 </template>
 <script>
 export default {
     data(){
         return {
-            currentIdx:1,
-            title:'上新',
+            currentIdx:0,
+            
             bars:[
                 {title:'上新',to:'newup',id:1},
                 {title:'女装',to:'nvzhuang',id:2},
@@ -21,19 +21,23 @@ export default {
         }
     },
     methods:{
-        goto(bar){
-            this.currentIdx=bar.id;
-            if(bar.id==1){
-                this.title = '米折'
-            }else{
-                this.title= bar.title
-                }
-                
-            this.$router.push({
+        gobar(bar) {
+           
+             this.$router.push({
                name:bar.to,
                params:{pathname:bar.to}
            }) 
+        },
+        gonav(index){
+         
+            this.currentIdx=index;
+            // if(bar.id==1){
+            //     this.title = '米折'
+            // }else{
+            //     this.title= bar.title
+            //     }
         }
+        
         
     }
 }

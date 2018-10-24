@@ -1,6 +1,6 @@
 <template>
     <div class="header">
-        <mt-header fixed :title="title">
+        <mt-header fixed title="分类">
             <font-awesome-icon icon="arrow-left" @click="goback" slot="left"/>
             <router-link to="/" slot="right">
                 <font-awesome-icon icon="home"  />
@@ -16,7 +16,10 @@ import Vue from 'vue'
 export default {
     data(){
         return {
-            title:'个人中心'
+            title:[
+                '分类',
+                '品牌'
+            ]
         }
     },
     methods:{

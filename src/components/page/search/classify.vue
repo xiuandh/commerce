@@ -1,5 +1,6 @@
 <template>
     <div class="class-list">
+        <search></search>
         <div v-for="(list,index) in classList" :key="index">
             <mt-cell :title="list.category_name"></mt-cell>
             <ul >
@@ -12,14 +13,21 @@
     </div>
 </template>
 <script>
+import global_ from '@/components/Global'
+import search from '@/components/common/search_header'
 export default {
+    
     data(){
         return{
             classList:[],
+            pathurl:global_.pathurl,
         }
     },
+    components:{
+        search
+    },
     created(){
-        this.$http.get('http://10.3.137.16:7070/mizhe/classify').then(res=>{
+        this.$http.get(this.pathurl+'/mizhe/classify').then(res=>{
             this.classList=res.data[0].main_categorys;
         })
     }

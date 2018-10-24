@@ -8,6 +8,7 @@ import meizhuang from '@/components/page/meizhuang'
 import tongzhuang from '@/components/page/tongzhuang'
 import muying from '@/components/page/muying'
 import personal from '@/components/page/personal'
+import classify from '@/components/page/search/classify'
 
 Vue.use(Router)
 
@@ -56,6 +57,11 @@ export default new Router({
       path:'/nvzhuang',
       component:nvzhuang,
       name:'nvzhuang'
+    },
+    {
+      path:'/classify',
+      component:classify,
+      name:'classify'
     }
   ]
 })

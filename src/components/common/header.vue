@@ -4,7 +4,7 @@
             <router-link to="/personal" slot="left" solt="test1">
                 <font-awesome-icon icon="user" />
             </router-link>
-            <font-awesome-icon icon="search" slot="right" />
+            <font-awesome-icon icon="search" @click="goClassify" slot="right" />
         </mt-header>
         <mynav></mynav>
     </div>
@@ -40,6 +40,11 @@ export default {
             }else{
                 this.title= bar.title
             }
+        },
+        goClassify() {
+            this.$router.push({
+                name:'classify'
+            })
         }
     }
 }

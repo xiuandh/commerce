@@ -31,7 +31,7 @@
               
                 ],
                 pathurl:global_.pathurl,
-                pathname:this.$route.params.pathname
+                pathname:this.$route.params.pathname || 'nvzhuang'
             }
         },
         components:{

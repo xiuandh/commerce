@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <app-header></app-header>
     <router-view></router-view>
   </div>
 </template>
@@ -22,6 +21,8 @@ body{margin:0}
   text-align: center;
   color: #2c3e50;
   font-size:16px;
-  background: #eee;
+}
+.goodsitem{
+  background-color: #eee;
 }
 </style>
