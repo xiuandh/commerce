@@ -1,47 +1,49 @@
 <template>
-    <div class="personal">
+    <div>
         <myheader></myheader>
-        <div class="background">
-            <button>立即登录</button>
-            <button>新人注册</button>
+        <div class="personal">
+            <div class="background">
+                <button>立即登录</button>
+                <button>新人注册</button>
+            </div>
+            <div class="padding">
+                <mt-cell title="全部订单" to="">
+                    <span>></span>
+                    <font-awesome-icon icon="folder" slot="icon"/>
+                </mt-cell>
+                <mt-tabbar >
+                    <mt-tab-item :id="item.id" v-for="(item,index) in orders" :key="index">
+                        <font-awesome-icon :icon="item.icon" slot="icon"/>
+                        {{item.title}}
+                    </mt-tab-item>
+                </mt-tabbar>
+            </div>
+            
+            <div class="padding">
+                <mt-cell title="我的钱包" to="">
+                    <font-awesome-icon icon="wallet" slot="icon"/>
+                </mt-cell>
+                <mt-tabbar >
+                    <mt-tab-item :id="bar.id" v-for="(bar,idx) in carts" :key="idx">
+                        <span>{{bar.money}}</span>
+                        {{bar.title}}
+                    </mt-tab-item>
+                </mt-tabbar>
+            </div>
+            
+            <div class="padding">
+                <mt-cell v-for="(list,index) in lists" :title="list.title" to="" :key="index">
+                    <span>></span>
+                    <font-awesome-icon :icon="list.icon" slot="icon"/>
+                </mt-cell>
+            </div>
+            
         </div>
-        <div class="padding">
-            <mt-cell title="全部订单" to="">
-                <span>></span>
-                <font-awesome-icon icon="folder" slot="icon"/>
-            </mt-cell>
-            <mt-tabbar >
-                <mt-tab-item :id="item.id" v-for="(item,index) in orders" :key="index">
-                    <font-awesome-icon :icon="item.icon" slot="icon"/>
-                    {{item.title}}
-                </mt-tab-item>
-            </mt-tabbar>
-        </div>
-        
-        <div class="padding">
-            <mt-cell title="我的钱包" to="">
-                <font-awesome-icon icon="wallet" slot="icon"/>
-            </mt-cell>
-            <mt-tabbar >
-                <mt-tab-item :id="bar.id" v-for="(bar,idx) in carts" :key="idx">
-                    <span>{{bar.money}}</span>
-                    {{bar.title}}
-                </mt-tab-item>
-            </mt-tabbar>
-        </div>
-        
-        <div class="padding">
-            <mt-cell v-for="(list,index) in lists" :title="list.title" to="" :key="index">
-                <span>></span>
-                <font-awesome-icon :icon="list.icon" slot="icon"/>
-            </mt-cell>
-        </div>
-        
     </div>
 </template>
 
 <script>
-import myheader from '@/components/common/header'
+import myheader from '@/components/common/top'
 export default {
     data(){
         return {
@@ -68,17 +70,13 @@ export default {
     components:{
         myheader
     },
-    created(){
-        this.$http.get('http://10.3.137.16:7070/mizhe/newup')
-        .then(res =>{
-            console.log(res)
-        })
-    }
 }
 </script>
 <style lang="scss" scoped>
     .personal{
         background-color:#eee;
+        top: 40px;
+        position: relative;
         .mint-cell{
              text-align:left;
         }                                        

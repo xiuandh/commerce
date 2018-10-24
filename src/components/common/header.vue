@@ -7,12 +7,6 @@
             <font-awesome-icon icon="search" slot="right" />
         </mt-header>
         <mynav></mynav>
-        <!-- <mt-navbar  fixed style="marginTop:40px;">
-            <mt-tab-item v-for="bar in bars" :key="bar.id" :id="bar.id" @click.native="goto(bar.to)">{{bar.title}}</mt-tab-item>
-        </mt-navbar> -->
-        <!-- <ul class="top-ul">
-            <li v-for="bar in bars" :key="bar.id" ><router-link tag="span" :to='bar.to'><span :class='{active:bar.id==currentIdx}' ref="html" @click="goto(bar)">{{bar.title}}</span></router-link></li>
-        </ul> -->
     </div>
 </template>
 
