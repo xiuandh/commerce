@@ -8,8 +8,9 @@ import router from './router'
 import './sass/main.scss' 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { faUser,faSearch,faArrowLeft,faHome,faHandsHelping,faHourglass,faShoppingCart,faEdit,faSmile,faFolder,faWallet,faMapMarkerAlt,faHeart,faHeadset,faWindowMinimize,faInfo } from '@fortawesome/free-solid-svg-icons'
-library.add(faUser,faSearch,faArrowLeft,faHome,faHandsHelping,faHourglass,faShoppingCart,faEdit,faSmile,faFolder,faWallet,faMapMarkerAlt,faHeart,faHeadset,faWindowMinimize,faInfo)
+import { faUser,faSearch, faWindowMinimize,faInfo } from '@fortawesome/free-solid-svg-icons'
+library.add(faUser,faSearch,faWindowMinimize,faInfo)
+ 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 import Mint from 'mint-ui'

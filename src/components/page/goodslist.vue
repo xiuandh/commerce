@@ -1,16 +1,17 @@
 <template>
-    <div>
+    <div class="goodsitem">
+        <myheader></myheader>
         <p class="p1">
-            <span class="left"><font-awesome-icon icon="info" class="icon"/>热卖品牌</span>
+            <span class="left"><font-awesome-icon icon="home" class="icon"/>热卖品牌</span>
             <span class="right" @click="goto(id)">更多品牌 &gt;</span>
         </p>
         <ul class="goodslist">
-            <li v-for="list in lists" :key="list.id">
-                <img :src="list.url" />
+            <li v-for="list in lists" :key="list.iid">
+                <img :src="list.img" />
                 <p class="title">{{list.title}}</p>
                 <p class="p2">
-                    <span class="price">{{list.price}}</span>
-                    <span class="people">{{list.people}}人在抢</span>
+                    <span class="price">{{list.price/100}}</span>
+                    <span class="people">{{list.clicks}}人在抢</span>
                 </p>
             </li>
         </ul>
@@ -20,76 +21,40 @@
 
 <script>
     import Vue from 'vue';
-    
-
+    import myheader from '@/components/common/header'
+    import global_ from '@/components/Global'
     export default {
         data(){
             return {
                 allLoaded:false,
                 lists:[
-                    {
-                        id:1,
-                        title:'2018秋季韩版修身毛衣',
-                        url:'../../static/images/1.jpg',
-                        price:49.8,
-                        people:1626
-                    },
-                    {
-                        id:2,
-                        title:'2018秋季韩版修身毛衣',
-                        url:'../../static/images/1.jpg',
-                        price:49.8,
-                        people:1626
-                    },
-                    {
-                        id:3,
-                        title:'2018秋季韩版修身毛衣',
-                        url:'../../static/images/1.jpg',
-                        price:49.8,
-                        people:1626
-                    },
-                    {
-                        id:4,
-                        title:'2018秋季韩版修身毛衣',
-                        url:'../../static/images/1.jpg',
-                        price:49.8,
-                        people:1626
-                    },
-                    {
-                        id:5,
-                        title:'2018秋季韩版修身毛衣',
-                        url:'../../static/images/1.jpg',
-                        price:49.8,
-                        people:1626
-                    },
-                    {
-                        id:6,
-                        title:'2018秋季韩版修身毛衣',
-                        url:'../../static/images/1.jpg',
-                        price:49.8,
-                        people:1626
-                    },
-                ]
+              
+                ],
+                pathurl:global_.pathurl
             }
+        },
+        components:{
+            myheader
         },
         methods:{
             goto(id){
                 this.$router.push({name:'specialSale',params:{id}});
             },
-            getlists(){
-                this.$http.get('http://10.3.137.17:6000/mizhe/newup').then(
+            getlists() {
+                
+                this.$http.get(this.pathurl+'/mizhe/newup').then(
                     res=>{
                         console.log(res)
+                        this.lists = res.data;
                     }
 
                     )
 
 
-        },
-
-        created(){
-            this.getlists();
             }
+        },
+        created() {
+            this.getlists()
         }
     }
 
@@ -101,14 +66,20 @@
      padding: 0;
      margin: 0;
 }
+.goodsitem{
+    margin-top: 5.625rem;
+    padding-top: .3125rem;
+}
  .p1{
-    
-     width: 100%;
-     height: 3.125rem;
-     line-height: 3.125rem;
-     display:flex;
-     justify-content: space-between;
-     margin:3.4375rem 0 0.3125rem 0;
+    /* box-sizing: border-box; */
+    /* width: 100%; */
+    height: 2.5rem;
+    margin: .3125rem 0 ;
+    line-height: 2.5rem;
+    display:flex;
+    justify-content: space-between;
+    background: #fff;
+    padding: 0 .625rem;
 }
  .p1 .icon{
      color:#f00;
@@ -119,29 +90,39 @@
      padding-right:0.625rem;
 }
  .goodslist{
-     display:flex;
+     /* display:flex; */
      /*padding:2%;*/
-     flex-wrap:wrap;
+     /* flex-wrap:wrap; */
+     /* width: 100%; */
+     /* box-sizing: border-box; */
+     padding: .3125rem;
 }
  .goodslist li{
-     width: 49%;
+     display: inline-block;
+     box-sizing: border-box;
+     width: 50%;
+     padding: .3125rem;
 }
- .goodslist li:nth-child(2n-1){
+ /* .goodslist li:nth-child(2n-1){
      margin-right:2%;
-}
+} */
  .goodslist img{
      width: 100%;
     
 }
  .goodslist .title{
      padding:0 0.125rem;
+     white-space:nowrap;
      overflow:hidden;
+     text-overflow: ellipsis;
      font-size: 0.75rem;
+     background: #fff;
 }
  .goodslist .p2{
      display:flex;
      justify-content: space-between;
      padding:0.3125rem 0 0.5rem 0;
+     background-color: #fff;
 }
  .goodslist .price{
      color:#f00;
