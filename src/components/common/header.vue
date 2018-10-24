@@ -46,7 +46,6 @@ export default {
             }else{
                 this.title= bar.title
             }
-            
         }
     }
 }

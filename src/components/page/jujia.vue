@@ -3,10 +3,10 @@
         <myheader></myheader>
         <p class="p1">
             <span class="left"><font-awesome-icon icon="home" class="icon"/>热卖品牌</span>
-            <span class="right" @click="goto(id)">更多品牌 &gt;</span>
+            <span class="right" @click="gopinpai">更多品牌 &gt;</span>
         </p>
         <ul class="goodslist">
-            <li v-for="list in lists" :key="list.iid">
+            <li v-for="(list,idx) in lists" :key="idx">
                 <img :src="list.img" />
                 <p class="title">{{list.title}}</p>
                 <p class="p2">
@@ -30,19 +30,20 @@
                 lists:[
               
                 ],
-                pathurl:global_.pathurl
+                pathurl:global_.pathurl,
+                pathname:this.$route.params.pathname
             }
         },
         components:{
             myheader
         },
         methods:{
-            goto(id){
-                this.$router.push({name:'specialSale',params:{id}});
+            gopinpai(){
+                this.$router.push({name:'specialSale'});
             },
             getlists() {
-                
-                this.$http.get(this.pathurl+'/mizhe/newup').then(
+                // console.log(this.pathname)
+                this.$http.get(this.pathurl+'/mizhe/'+ this.pathname).then(
                     res=>{
                         console.log(res)
                         this.lists = res.data;
@@ -56,6 +57,8 @@
         created() {
             this.getlists()
         }
+        
+        
     }
 
 </script>
