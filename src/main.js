@@ -8,9 +8,8 @@ import router from './router'
 import './sass/main.scss' 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-
-import { faUser,faSearch,faArrowLeft,faHome,faHandsHelping,faHourglass,faShoppingCart,faEdit,faSmile,faFolder,faWallet,faMapMarkerAlt,faHeart,faHeadset,faWindowMinimize,faInfo } from '@fortawesome/free-solid-svg-icons'
-library.add(faUser,faSearch,faArrowLeft,faHome,faHandsHelping,faHourglass,faShoppingCart,faEdit,faSmile,faFolder,faWallet,faMapMarkerAlt,faHeart,faHeadset,faWindowMinimize,faInfo)
+import { faUser,faSearch, faWindowMinimize,faInfo,faHandsHelping,faHourglass,faShoppingCart,faEdit,faSmile,faMapMarkerAlt,faHeart,faHeadset,faFolder,faWallet,faHome,faArrowLeft } from '@fortawesome/free-solid-svg-icons'
+library.add(faUser,faSearch,faWindowMinimize,faInfo,faHandsHelping,faHourglass,faShoppingCart,faEdit,faSmile,faMapMarkerAlt,faHeart,faHeadset,faFolder,faWallet,faHome,faArrowLeft)
  
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 

@@ -6,13 +6,13 @@
                 <font-awesome-icon icon="home"  />
             </router-link>
         </mt-header>
-        <nav-top></nav-top>
+        <!-- <nav-top></nav-top> -->
     </div>
 </template>
 <script>
 import Vue from 'vue'
-import nav from './nav.vue'
-Vue.component('nav-top',nav)
+// import nav from './nav.vue'
+// Vue.component('nav-top',nav)
 export default {
     data(){
         return {
